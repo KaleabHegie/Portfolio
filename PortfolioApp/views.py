@@ -1,19 +1,6 @@
 from django.shortcuts import render , redirect
 from .models import Education , WorkExperience , Projects , ContactUs
 
-# Create your views here.
-
-def index(request):
-    
-    return render(request , 'home.html')
-
-
-
-def projects(request):
-    return render(request , 'projects.html')  
-
-
-
 def onepage(request):
     if request.method == "POST":
         name = request.POST.get('name')
@@ -31,4 +18,4 @@ def onepage(request):
         "work_experience" : work_experience ,
         "projects" : projects
     }
-    return render(request , 'onepage.html' , context)      
+    return render(request , 'index.html' , context)      
